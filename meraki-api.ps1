@@ -372,7 +372,7 @@ $oidreplace2 = $orgid.url -split "/"
     $oidreplace3 = "https://" + $oidreplace2[2] + "/api/v1"
     $apiurl = $oidreplace3 + '/organizations/' + $orgid.id + '/admins'
 
-  $test3 = $request | where { $_.email -eq $email } # "dhamilton0319@gmail.com" } #change this to parameter once done
+  $test3 = $request | where { $_.email -eq $email } # "joe@blow.com" } #change this to parameter once done
 $test4 = $test3.id
 $uri2 = $apiurl + "/" + $test4
 

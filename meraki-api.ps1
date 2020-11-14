@@ -1,6 +1,6 @@
 ﻿#You can run this script in powershell one of a few ways:
 #. .\meraki-api.ps1; get-merakiOrganizations
-#Or import-module meraki-api.ps1 then run the functions as normal: get-merakiOrganizations
+#Or import-module meraki-api.ps1 then run the functions as normal: ie: get-merakiOrganizations
 <#
 List of functions:
 

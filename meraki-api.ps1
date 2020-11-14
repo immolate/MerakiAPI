@@ -1,7 +1,32 @@
 ﻿#You can run this script in powershell one of a few ways:
 #. .\meraki-api.ps1; get-merakiOrganizations
 #Or import-module meraki-api.ps1 then run the functions as normal: get-merakiOrganizations
+<#
+List of functions:
 
+get-merakiOrganizations - List all orgs + orgId's
+
+add-allMerakiAdmins "full name" email@address.com full - to add Full Name with full org access to every company controlled with your API
+
+Block-l7-firewall - requires blockedCountries.txt and blockedIpRange.txt in current dir and will convert both files to JSON format and submit to ALL networks.
+Country support for above command requires the advanced license to block countries.
+
+Copy-MerakiAdmin + select an org from list - Copies all admins except those excluded in $masterBanCopy from your MSP/Master org to the selected org
+
+Del-MerakiAllAdmins email@address.com - delete specified e-mail address as an admin across all orgs. 
+
+Get-MerakiAllAdmins - 
+#Usage = Get-MerakiAllAdmins to list every admin in every org
+#Usage2 = Get-MerakiAllAdmins email@address.com to list very specific details about specified admin in each org.
+#Usage3 = Get-MerakiAllAdmins 1 - This will return admins in the master org (msp) only - used in Copy-MerakiAdmins
+
+Add-MerakiSiteToSite + select org - Establish a site to site VPN with MSP/Master org with a randomly generated 25 char secret (preserves existing site to site VPN's)
+
+Get-Meraki-Vlans - NOT intended to be used as a standalone function
+
+Get-MerakiNetworks - NOT intended to be used as a standalone function
+
+#>
 
 $api_key = '' #Key your current API key or the script will FAIL in all instances
 
